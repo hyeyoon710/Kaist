@@ -558,12 +558,12 @@ footer .f_contact p  a {color: #6a6a6a;}
 .sub_title .location li:hover {opacity: 1;text-decoration: underline;}
 
 /* sub - title_bg */
-.about .sub_title .inner {background-image: url(/img/sub/sub_visual01.jpg);}
-.member .sub_title .inner {background-image: url(/img/sub/sub_visual02.jpg);}
-.program .sub_title .inner {background-image: url(/img/sub/sub_visual03.jpg);}
-.education .sub_title .inner {background-image: url(/img/sub/sub_visual04.jpg);}
-.research .sub_title .inner {background-image: url(/img/sub/sub_visual05.jpg);}
-.community .sub_title .inner {background-image: url(/img/sub/sub_visual06.jpg);}
+.about .sub_title .inner {background-image: url(../img/sub/sub_visual01.jpg);}
+.member .sub_title .inner {background-image: url(../img/sub/sub_visual02.jpg);}
+.program .sub_title .inner {background-image: url(../img/sub/sub_visual03.jpg);}
+.education .sub_title .inner {background-image: url(../img/sub/sub_visual04.jpg);}
+.research .sub_title .inner {background-image: url(../img/sub/sub_visual05.jpg);}
+.community .sub_title .inner {background-image: url(../img/sub/sub_visual06.jpg);}
 
 
 .sub .depth_list {border-bottom: 1px solid #ddd;}
