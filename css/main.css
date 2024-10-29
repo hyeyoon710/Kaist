@@ -195,7 +195,6 @@ header.on h1 a, header.sub_header h1 a {
 @media screen and (max-width: 768px) {
   header .allmenu_popup .allmenu_right .dep1>li {display: block;}
   header .allmenu_popup .allmenu_right .dep2 {display: block;}
-
 }
 
 /* footer */
