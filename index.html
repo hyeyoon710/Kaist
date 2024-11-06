@@ -28,6 +28,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script defer src="js/main.js">
 
       // js를 internal(내부 문서) 방식으로 사용할 때는 Script 태그에 속성 없이 바로 작성
@@ -326,27 +328,13 @@
           </div>
         </div>
       </header>
-      <!-- 스크롤 페이지 이동 연습 -->
-      <div class="main_nav">
+      <!-- <div class="main_nav">
         <a href="#">비주얼</a>
         <a href="#">탄소중립</a>
         <a href="#">프로그램</a>
         <a href="#">교수진</a>
         <a href="#">뉴스</a>
-      </div>
-      <style>
-        .main_nav {
-          display: flex;flex-direction: column;gap: 10px;padding: 20px;
-          position: fixed;right: 20px;top: 50%;transform: translateY(-50%);
-          background: #fff;border: 1px solid rgba(0, 0, 0, 0.5);border-radius: 30px;
-          z-index: 100;opacity: 0.8;
-        }
-        .main_nav .active {
-          color: #000;font-weight: bold;
-        }
-      </style>
-      <!-- 스크롤 페이지 이동 연습 -->
-
+      </div> -->
       <main id="main_content">
         <div class="main_visual">
           <div class="main_swiper">
@@ -366,11 +354,7 @@
             </div>
           </div>
           <div class="swiper_content">
-            <strong
-              >KAIST GRADUATE SCHOOL OF <br class="br1" />
-              GREEN <br class="br2" />
-              GROWTH & SUSTAINABILITY</strong
-            >
+            <strong>KAIST GRADUATE SCHOOL OF <br class="br1" />GREEN <br class="br2" />GROWTH & SUSTAINABILITY</strong>
             <!-- navigation button -->
             <div class="progress_wrap">
               <div class="swiper-button-prev">
@@ -383,10 +367,7 @@
                 <div class="bar"></div>
               </div>
             </div>
-            <span
-              >Combining Science & Technology <br />
-              with Policy and Finance to Achieve Carbon Neutrality</span
-            >
+            <span>Combining Science & Technology <br />with Policy and Finance to Achieve Carbon Neutrality</span>
             <div class="swiper-controls-wrap">
               <div class="swiper-pagination"></div>
               <div class="swiper-auto-controls">
@@ -399,10 +380,6 @@
               </div>
             </div>
           </div>
-          <!-- navigation button - 내가 만든 것 -->
-          <!-- <div class="swiper-btn-prev"><img src="img/main/main_arrow.svg" alt=""></div>
-        <div class="swiper-btn-next"><img src="img/main/main_arrow.svg" alt=""></div>
-        <div class="bar"><span></span></div> -->
           <div class="quick_list">
             <a href="#"
               ><span
@@ -428,7 +405,7 @@
         </div>
         <!-- 퀵메뉴가 메인비주얼과 겹쳐져 있기 때문에 독립적인 행으로 만들지 고민이 필요 -->
         <h2 class="blind">메인 본문</h2>
-        <section class="earth_wrap">
+        <section class="earth_wrap scroll_fade">
           <div class="inner">
             <h3>
               <span class="blind">ONLY ONE EARTH</span>
@@ -448,7 +425,7 @@
             </div>
           </div>
         </section>
-        <section class="course_wrap">
+        <section class="course_wrap scroll_fade">
           <div class="inner">
             <div class="course_content">
               <div class="title_box">
@@ -484,7 +461,7 @@
             </div>
           </div>
         </section>
-        <section class="faculty_wrap">
+        <section class="faculty_wrap scroll_fade">
           <div class="title_box">
             <h3>FACULTY</h3>
             <p>
@@ -775,7 +752,7 @@
             </ul>
           </div>
         </section>
-        <section class="news_wrap">
+        <section class="news_wrap scroll_fade">
           <div class="inner">
             <h3>NEWS</h3>
             <div class="tabs_wrap">
@@ -912,7 +889,7 @@
             </div>
           </div>
         </section>
-        <section class="banner_wrap">
+        <section class="banner_wrap scroll_fade">
           <div class="flow_content_wrap">
             <div class="flow_content">
               <img src="img/main/rolling_img.svg" alt="" />

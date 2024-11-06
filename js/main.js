@@ -112,8 +112,8 @@ const swiper = new Swiper('.main_swiper',{
   loop: true,
 
   navigation: {
-    nextEl: '.swiper-btn-next',
-    prevEl: '.swiper-btn-prev',
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 
   pagination: {
@@ -121,16 +121,29 @@ const swiper = new Swiper('.main_swiper',{
     clickable: true,
   },
 })
+function resetProgressBar() {
+  const progressBar = document.querySelector('.progress .bar');
+  progressBar.style.animation = 'none';  // 애니메이션 초기화
+  void progressBar.offsetWidth;          // 리플로우를 트리거해서 애니메이션 리셋
+  progressBar.style.animation = '';      // 애니메이션 재적용
+  progressBar.style.animationPlayState = 'running'; // 자동 재생 상태에서도 재시작
+}
+
+// swiper 네비게이션 버튼 클릭 시 progress bar 리셋하기
+document.querySelector('.swiper-button-next').addEventListener('click', resetProgressBar);
+document.querySelector('.swiper-button-prev').addEventListener('click', resetProgressBar);
 
 $('.main_visual .auto-play').click(function(){
   $(this).hide();
   $('.main_visual .auto-stop').show()
-  mainSwiper.autoplay.start();
+  swiper.autoplay.start();
+  $('.progress .bar').css('animation-play-state', 'running')
 })
 $('.main_visual .auto-stop').click(function(){
   $(this).hide();
   $('.main_visual .auto-play').show()
-  mainSwiper.autoplay.stop();
+  swiper.autoplay.stop();
+  $('.progress .bar').css('animation-play-state', 'paused')
 })
 
 $('.swiper-pagination span').click(function() {
@@ -246,6 +259,28 @@ $(window).scroll(function() {
   }
 })
 
+//*** 섹션마다 스크롤 시 fade 효과
+$('.scroll_fade').css({
+  opacity: 0,
+  transform: 'translateY(30px)',
+  transition: 'opacity 0.6s ease, transform 2s ease'
+
+});
+$(window).on('scroll', function() {
+  $('.scroll_fade').each(function() {
+      let windowHeight = $(window).height();
+      let scrollTop = $(window).scrollTop();
+      let offsetTop = $(this).offset().top;
+
+     //화면의 30% 지점에서 보이도록
+     if (scrollTop + windowHeight * 0.7 > offsetTop) {
+        $(this).css({
+            opacity: 1,
+           transform: 'translateY(0)' //원래 위치로 이동
+        });
+      }
+  });
+});
 
 
 
